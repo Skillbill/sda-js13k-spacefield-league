@@ -245,10 +245,8 @@
         lock = true;
         setTimeout(() => {
           if(document.body.scrollTop > prevScroll) {
-            console.log('+', document.body.scrollTop, prevScroll)
             sectionIndex++;
           } else if(document.body.scrollTop < prevScroll) {
-            console.log('-', document.body.scrollTop, prevScroll)
             sectionIndex--;
           }
           if(sectionIndex > sections.length - 1) {
@@ -259,7 +257,6 @@
           } 
           
           let section = sections[sectionIndex];
-          console.log(sectionIndex);
           setTimeout(() => document.body.scrollTo(0, sections[sectionIndex].offsetTop), 10);
           setTimeout(() => { lock = false; prevScroll = document.body.scrollTop; }, 200);
         }, 50);
